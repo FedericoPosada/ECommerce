@@ -1,0 +1,66 @@
+.navbar {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#mainContainer{
+    margin-top: 50px;
+}
+
+#searchContainer{
+    margin-bottom: 30px;
+}
+
+#searchContainer{
+    width: 100%;
+}
+
+#searchContainerTablet{
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+#searchContainer input{
+    width: 70%;
+}
+
+#searchContainerTablet input{
+    width: 70%;
+}
+
+#categoryList{
+    width: 90%;
+}
+
+#categoryList .list-group-item-action .badge-pill{
+    background-color: grey;
+    color: 	white;
+}
+
+#categoryList .active .badge-pill{
+    background-color: white;
+    color: 	#007AFF;
+}
+
+
+@media (max-width: 992px){
+    #fullScreenSideBar{
+        display: none;
+    }
+
+    #searchContainerTablet{
+        visibility: visible;
+    }
+}
+
+@media (min-width: 991px){
+    #fullScreenSideBar{
+        visibility: visible;
+    }
+
+    #searchContainerTablet{
+        display: none;
+    }
+}
+
