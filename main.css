@@ -43,6 +43,113 @@
     color: 	#007AFF;
 }
 
+#itemsBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-flow: row;
+    margin-top: 20px;
+
+}
+
+#itemsContainer{
+    margin-top: 20px;
+
+}
+
+.clothingItem{
+    padding: 5px 10px 20px 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    width: 210px;
+    margin: 0px 0px 20px 20px;
+}
+
+.clothingItem .clothingImg{
+    max-width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.clothingItem .btn-primary{
+    background-color: #307AB9;
+}
+
+.modal{
+
+}
+
+.modalImg{
+    display: inline;
+    border: 1px solid lightgrey;
+    margin-right: 20px;
+}
+
+.modalInfo{
+    display: inline-flex;
+    flex-flow: column;
+}
+
+.modalInfoBody{
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+#nav-description{
+    padding-top: 10px;
+}
+
+.commentsList, .commentsForm{
+    margin: 10px;
+}
+
+.badge-warning{
+    color:white;
+}
+
+@media (min-width: 992px){
+    #fullScreenSideBar{
+        visibility: visible;
+    }
+
+    #searchContainerTablet{
+        display: none;
+    }
+
+    #rightContainer{
+        width: 70%;
+    }
+}
+
+@media (max-width: 1200px){
+    #itemsContainer{
+        justify-content: center;
+    }
+}
+
+@media (min-width: 1200px){
+    #itemsContainer{
+        justify-content: start;
+    }
+
+    .clothingItem{
+        width: 250px;
+    }
+}
+
+
+@media (max-width: 991px){
+    #fullScreenSideBar{
+        display: none;
+    }
+
+    #searchContainerTablet{
+        visibility: visible;
+    }
+
+}
 
 @media (max-width: 992px){
     #fullScreenSideBar{
@@ -52,15 +159,26 @@
     #searchContainerTablet{
         visibility: visible;
     }
+
+    #rightContainer{
+        width: 100%;
+    }
 }
 
-@media (min-width: 991px){
-    #fullScreenSideBar{
+@media (max-width: 768px) {
+    #navOptions{
+        display: none;
+    }
+    #collapseButton{
         visibility: visible;
     }
+}
 
-    #searchContainerTablet{
+@media (min-width: 769px) {
+    #navOptions{
+        visibility: visible;
+    }
+    #collapseButton{
         display: none;
     }
 }
-

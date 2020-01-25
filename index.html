@@ -12,13 +12,80 @@
 <body>
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="#">E-commerce</a>
-    <form class="form-inline">
+    <form class="form-inline" id="navOptions">
         <button type="button" class="btn btn-dark"><img src="icons/cart.png"> Canasta</button>
         <button type="button" class="btn btn-dark">Salir</button>
     </form>
+    <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#collapseList" id="collapseButton"
+            aria-controls="collapseList" aria-expanded="false"><span class="dark-blue-text"><img src="icons/hamburger.png"></span></button>
+    <div class="collapse navbar-collapse" id="collapseList">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><img src="icons/cart.png">Canasta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Salir</a>
+            </li>
+        </ul>
+    </div>
 </nav>
-<div class="container" id="mainContainer">
-    <div class="row">
+<div class="container" id="mainContainer" >
+    <div class="modal fade" id="modalItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hipster Ultimate</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        <div class="alert alert-info" role="alert">
+                            Este producto está agotado.
+                        </div>
+                    <div class="modalInfoBody">
+                        <img class="modalImg" src="//s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg">
+                        <div class="modalInfo">
+                            <p>Precio: <strong>$299</strong></p>
+                            <p>Calificación: <strong>★★★★☆</strong></p>
+                            <div><span class="badge badge-warning">Hipster</span> <span class="badge badge-secondary">Deportiva</span></div>
+                            <a href="#">♥ Agregar a los deseos</a>
+                        </div>
+                    </div>
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="nav-description-tab" data-toggle="tab" href="#nav-description" role="tab"
+                               aria-controls="nav-description" aria-selected="true">Descripción</a>
+                            <a class="nav-item nav-link" id="nav-comments-tab" data-toggle="tab" href="#nav-comments" role="tab"
+                               aria-controls="nav-comments" aria-selected="false">Comentarios</a>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-description" role="tabpanel" aria-labelledby="nav-description-tab">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div class="tab-pane fade" id="nav-comments" role="tabpanel" aria-labelledby="nav-comments-tab">
+                            <div class="commentsList">
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-secondary">Germán Escobar comentó hace 2 días</li>
+                                    <li class="list-group-item">Esta camiseta está increíble, la quiero!</li>
+                                </ul>
+                            </div>
+                            <div class="commentsForm">
+                                <textarea class="form-control" rows="3" id="comment" placeholder="Ingresa tu comentario"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
         <div class="col-md-3" id="fullScreenSideBar">
             <div class="row" id="searchContainer">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar camisetas..." aria-label="Search">
@@ -48,10 +115,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-9" >
+        <div id="rightContainer">
             <div class="row" id="searchContainerTablet">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar camisetas..." aria-label="Search">
-                <button type="submit"><img src="icons/magnify.png"></button>
+                <button type="submit" onclick="console.log(window.innerWidth)"><img src="icons/magnify.png"></button>
             </div>
                 <div id="demo" class="carousel slide" data-ride="carousel">
                     <ul class="carousel-indicators">
@@ -79,8 +146,44 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-            <div class="row">
-
+            <div class="row" style="margin-bottom: 50px">
+                <div class="d-flex align-content-start flex-wrap" id="itemsContainer">
+                    <div class="clothingItem">
+                        <img src="//s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg" class="clothingImg">
+                        <h5>Hipster Ultimate</h5>
+                        <p>La camiseta ideal para hipsters.</p>
+                        <button type="button" class="btn btn-primary">$229<img src="icons/cart.png" style="height: 20px"></button>
+                        <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#modalItem">Detalles</button>
+                    </div>
+                    <div class="clothingItem">
+                        <img src="//s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2.jpg" class="clothingImg">
+                        <h5>On Motion Live</h5>
+                        <p>Perfecta para salidas rocosas.</p>
+                        <button type="button" class="btn btn-primary">$229<img src="icons/cart.png" style="height: 20px"></button>
+                        <button type="button" class="btn btn-outline-dark">Detalles</button>
+                    </div>
+                    <div class="clothingItem">
+                        <img src="//s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3.jpg" class="clothingImg">
+                        <h5>Underground Max</h5>
+                        <p>Para los amantes del underground.</p>
+                        <button type="button" class="btn btn-primary">$229<img src="icons/cart.png" style="height: 20px"></button>
+                        <button type="button" class="btn btn-outline-dark">Detalles</button>
+                    </div>
+                    <div class="clothingItem">
+                        <img src="//s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-4.jpg" class="clothingImg">
+                        <h5>Santo Domingo Tigers</h5>
+                        <p>En honor al equipo.</p>
+                        <button type="button" class="btn btn-primary">$229<img src="icons/cart.png" style="height: 20px"></button>
+                        <button type="button" class="btn btn-outline-dark">Detalles</button>
+                    </div>
+                    <div class="clothingItem">
+                        <img src="//s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-5.jpg" class="clothingImg">
+                        <h5>Una camiseta más</h5>
+                        <p>Nunca sobra tener una camiseta así.</p>
+                        <button type="button" class="btn btn-primary">$229<img src="icons/cart.png" style="height: 20px"></button>
+                        <button type="button" class="btn btn-outline-dark">Detalles</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
